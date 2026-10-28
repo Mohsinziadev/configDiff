@@ -1,4 +1,4 @@
-import { compareConfigs } from "configdiff";
+import { compareConfigs } from "configdiff-js";
 
 compareConfigs({ b: 2, a: 1 }, { a: 1, b: 2 }); // no changes: key order is not a change
 compareConfigs({ port: "3000" }, { port: 3000 }); // modified port: string became number

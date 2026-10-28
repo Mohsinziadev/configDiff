@@ -1,5 +1,5 @@
 import { useState, type CSSProperties, type ReactNode } from "react";
-import { listRules } from "configdiff";
+import { listRules } from "configdiff-js";
 import { ArrowRight, CheckIcon, CopyIcon, GitHubIcon, Logo } from "./icons";
 import {
   CHANGELOG_URL,

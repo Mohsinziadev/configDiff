@@ -28,10 +28,10 @@ configdiff check   --config <file> [options]
 
 ```bash
 # Machine-readable, CI-friendly
-npx configdiff compare --baseline a.json --candidate b.json --output json --fail-on warning
+npx configdiff-js compare --baseline a.json --candidate b.json --output json --fail-on warning
 
 # Ignore noisy paths and force a key to be redacted
-npx configdiff compare --baseline a.yaml --candidate b.yaml --ignore "metadata.**" --sensitive internal_token
+npx configdiff-js compare --baseline a.yaml --candidate b.yaml --ignore "metadata.**" --sensitive internal_token
 ```
 
 ## Exit codes

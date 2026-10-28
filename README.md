@@ -1,4 +1,4 @@
-# ConfigDiff
+# configdiff-js
 
 **Find configuration problems before they become production incidents.**
 
@@ -20,24 +20,24 @@ A text diff cannot tell you that key order changed but nothing else did, that an
 ## Install
 
 ```bash
-npm install --save-dev configdiff     # requires Node.js >= 22.12
-npx configdiff --help
+npm install --save-dev configdiff-js     # requires Node.js >= 22.12
+npx configdiff-js --help
 ```
 
-ESM package; `require("configdiff")` also works on Node >= 22.12. Runtime dependencies: `yaml`, `smol-toml`.
+ESM package; `require("configdiff-js")` also works on Node >= 22.12. Runtime dependencies: `yaml`, `smol-toml`.
 
 ## CLI
 
 ```bash
 # Compare two environments
-npx configdiff compare --baseline .env.staging --candidate .env.production \
+npx configdiff-js compare --baseline .env.staging --candidate .env.production \
   --baseline-name staging --candidate-name production --policy configdiff.policy.json
 
 # Check a single config against a policy/schema (no baseline)
-npx configdiff check --config config/production.yaml --policy configdiff.policy.json
+npx configdiff-js check --config config/production.yaml --policy configdiff.policy.json
 
 # Machine-readable, CI-friendly
-npx configdiff compare --baseline a.json --candidate b.json --output json --fail-on warning
+npx configdiff-js compare --baseline a.json --candidate b.json --output json --fail-on warning
 ```
 
 Formats are detected from the file name (`.env`, `.env.*`, `*.env`, `.json`, `.yaml`/`.yml`, `.toml`) or set with `--format`. Run `configdiff --help` for all flags.
@@ -45,7 +45,7 @@ Formats are detected from the file name (`.env`, `.env.*`, `*.env`, `.json`, `.y
 Try it with the bundled example (output above is real):
 
 ```bash
-npx configdiff compare --baseline examples/staging.env --candidate examples/production.env \
+npx configdiff-js compare --baseline examples/staging.env --candidate examples/production.env \
   --policy examples/configdiff.policy.json
 ```
 
@@ -60,7 +60,13 @@ npx configdiff compare --baseline examples/staging.env --candidate examples/prod
 ## API
 
 ```js
-import { compareConfigs, compareEnv, analyzeConfig, validateConfig, parseConfig } from "configdiff";
+import {
+  compareConfigs,
+  compareEnv,
+  analyzeConfig,
+  validateConfig,
+  parseConfig,
+} from "configdiff-js";
 
 const { changes } = compareConfigs(
   { API_URL: "https://staging.example.com", PORT: 3000, ENABLE_AUTH: true },
@@ -132,7 +138,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - run: npx --yes configdiff@0.1 compare --baseline config/staging.yaml --candidate config/production.yaml --policy configdiff.policy.json --fail-on warning
+      - run: npx --yes configdiff-js@0.1 compare --baseline config/staging.yaml --candidate config/production.yaml --policy configdiff.policy.json --fail-on warning
 ```
 
 Output is plain text with severities spelled out (no colour), and is safe for CI logs.

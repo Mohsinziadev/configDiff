@@ -10,7 +10,7 @@ export default defineConfig({
   root: r("."),
   base: "./",
   plugins: [react(), content()],
-  resolve: { alias: [{ find: /^configdiff$/, replacement: r("../src/index.ts") }] },
+  resolve: { alias: [{ find: /^configdiff-js$/, replacement: r("../src/index.ts") }] },
   server: { fs: { allow: [r("..")] } },
   build: { outDir: r("dist"), emptyOutDir: true },
 });

@@ -1,4 +1,4 @@
-import { analyzeConfig, parseConfig, type ConfigFormat } from "configdiff";
+import { analyzeConfig, parseConfig, type ConfigFormat } from "configdiff-js";
 
 export type Sample = {
   id: string;

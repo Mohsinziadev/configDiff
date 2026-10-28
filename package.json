@@ -1,5 +1,5 @@
 {
-  "name": "configdiff",
+  "name": "configdiff-js",
   "version": "0.1.0",
   "description": "Structural configuration comparison with risk-aware findings, policy enforcement, and built-in secret redaction. Works offline.",
   "keywords": [
@@ -18,7 +18,7 @@
   ],
   "license": "MIT",
   "author": "Mohsin Zia <mohsinziadev@gmail.com>",
-  "homepage": "https://www.m2toolkit.com/npm-packages/configdiff",
+  "homepage": "https://www.m2toolkit.com/npm-packages/configdiff-js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mohsinziadev/configdiff.git"

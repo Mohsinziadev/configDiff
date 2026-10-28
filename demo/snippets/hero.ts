@@ -1,4 +1,4 @@
-import { analyzeConfig, parseConfig } from "configdiff";
+import { analyzeConfig, parseConfig } from "configdiff-js";
 
 const report = analyzeConfig({
   baseline: parseConfig(stagingText, "env"),

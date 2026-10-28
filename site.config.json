@@ -1,10 +1,10 @@
 {
-  "slug": "configdiff",
-  "url": "https://www.m2toolkit.com/npm-packages/configdiff",
+  "slug": "configdiff-js",
+  "url": "https://www.m2toolkit.com/npm-packages/configdiff-js",
   "siteName": "M2Toolkit",
   "ogImage": "https://www.m2toolkit.com/opengraph-image",
   "accent": "#0f766e",
-  "title": "ConfigDiff",
+  "title": "configdiff-js",
   "tagline": "Structural config comparison with risk-aware findings and built-in secret redaction.",
   "runtimePlatform": "Node.js",
   "highlights": [

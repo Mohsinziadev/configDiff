@@ -61,7 +61,9 @@ try {
   );
 
   check("installed runtime dependencies are only yaml and smol-toml", () => {
-    const pkg = JSON.parse(readFileSync(join(app, "node_modules/configdiff/package.json"), "utf8"));
+    const pkg = JSON.parse(
+      readFileSync(join(app, "node_modules/configdiff-js/package.json"), "utf8"),
+    );
     const deps = Object.keys(pkg.dependencies ?? {})
       .sort()
       .join(",");
@@ -71,7 +73,7 @@ try {
   writeFileSync(
     join(app, "esm.mjs"),
     `
-import { compareConfigs, compareEnv, analyzeConfig, parseConfig, VERSION } from "configdiff";
+import { compareConfigs, compareEnv, analyzeConfig, parseConfig, VERSION } from "configdiff-js";
 const r = compareConfigs({ a: 1 }, { a: 2 });
 if (r.changes.length !== 1 || !VERSION) throw new Error("esm broken");
 const e = compareEnv("A_SECRET=hunter2hunter2", "A_SECRET=other-other");
@@ -84,7 +86,7 @@ if (analyzeConfig({ candidate: parseConfig("A=1", "env") }).status !== "pass") t
   writeFileSync(
     join(app, "cjs.cjs"),
     `
-const { compareConfigs } = require("configdiff");
+const { compareConfigs } = require("configdiff-js");
 if (compareConfigs({ a: 1 }, { a: 2 }).changes.length !== 1) throw new Error("cjs broken");
 `,
   );
@@ -96,7 +98,7 @@ if (compareConfigs({ a: 1 }, { a: 2 }).changes.length !== 1) throw new Error("cj
     try {
       run(
         "node",
-        ["-e", "import('configdiff/dist/cli.js').then(()=>process.exit(1),()=>process.exit(0))"],
+        ["-e", "import('configdiff-js/dist/cli.js').then(()=>process.exit(1),()=>process.exit(0))"],
         { cwd: app },
       );
     } catch {
@@ -108,7 +110,7 @@ if (compareConfigs({ a: 1 }, { a: 2 }).changes.length !== 1) throw new Error("cj
       "node",
       [
         "-e",
-        "import('configdiff/package.json',{with:{type:'json'}}).then(m=>{if(!m.default.version)process.exit(1)})",
+        "import('configdiff-js/package.json',{with:{type:'json'}}).then(m=>{if(!m.default.version)process.exit(1)})",
       ],
       { cwd: app },
     ),
@@ -117,7 +119,7 @@ if (compareConfigs({ a: 1 }, { a: 2 }).changes.length !== 1) throw new Error("cj
   writeFileSync(
     join(app, "types.ts"),
     `
-import { compareConfigs, analyzeConfig, validateConfig, type Report, type Change, ConfigDiffError } from "configdiff";
+import { compareConfigs, analyzeConfig, validateConfig, type Report, type Change, ConfigDiffError } from "configdiff-js";
 const r: Report = analyzeConfig({ baseline: { a: 1 }, candidate: { a: 2 }, policy: { rules: { "watch-paths": { paths: [{ path: "a" }] } } } });
 const c: Change | undefined = r.changes[0];
 validateConfig({ A: "1" }, { properties: { A: { type: "integer" } } });

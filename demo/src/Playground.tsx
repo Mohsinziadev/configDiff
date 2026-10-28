@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { analyzeConfig, parseConfig, type Report, type ValueView } from "configdiff";
+import { analyzeConfig, parseConfig, type Report, type ValueView } from "configdiff-js";
 import { docHref } from "./router";
 import { SAMPLES, type Sample } from "./samples";
 

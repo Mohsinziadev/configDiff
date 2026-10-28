@@ -22,7 +22,7 @@ export type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 export const installCommand = (pm: PackageManager) =>
   pm === "npm" ? `npm install --save-dev ${PKG.name}` : `${pm} add -D ${PKG.name}`;
 
-/** M2Toolkit hosts this page at /npm-packages/configdiff; links use absolute URLs like the other package pages. */
+/** M2Toolkit hosts this page at /npm-packages/configdiff-js; links use absolute URLs like the other package pages. */
 export const M2TOOLKIT = "https://www.m2toolkit.com";
 export const PACKAGES_URL = `${M2TOOLKIT}/npm-packages`;
 

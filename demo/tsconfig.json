@@ -14,7 +14,7 @@
     "allowImportingTsExtensions": true,
     "types": ["vite/client", "node"],
     "paths": {
-      "configdiff": ["../src/index.ts"]
+      "configdiff-js": ["../src/index.ts"]
     }
   },
   "include": ["src", "snippets", "entry-server.tsx", "vite.config.ts", "content-plugin.ts"]

@@ -1,4 +1,10 @@
-import { analyzeConfig, compareConfigs, compareEnv, parseConfig, validateConfig } from "configdiff";
+import {
+  analyzeConfig,
+  compareConfigs,
+  compareEnv,
+  parseConfig,
+  validateConfig,
+} from "configdiff-js";
 
 // 1. Structural comparison of plain objects.
 const { changes } = compareConfigs(

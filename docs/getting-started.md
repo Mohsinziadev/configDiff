@@ -5,16 +5,16 @@ ConfigDiff compares configuration _structurally_ (env, JSON, YAML, TOML), explai
 ## Install
 
 ```bash
-npm install --save-dev configdiff
-npx configdiff --help
+npm install --save-dev configdiff-js
+npx configdiff-js --help
 ```
 
-Requires Node.js 22.12 or newer. The package is ESM; `require("configdiff")` also works on Node 22.12+. Runtime dependencies are `yaml` and `smol-toml`.
+Requires Node.js 22.12 or newer. The package is ESM; `require("configdiff-js")` also works on Node 22.12+. Runtime dependencies are `yaml` and `smol-toml`.
 
 ## Compare two environments
 
 ```bash
-npx configdiff compare \
+npx configdiff-js compare \
   --baseline .env.staging \
   --candidate .env.production \
   --policy configdiff.policy.json
@@ -36,7 +36,7 @@ Formats are detected from the file name (`.env`, `.env.*`, `*.env`, `.json`, `.y
 ## Check a single config
 
 ```bash
-npx configdiff check --config config/production.yaml --policy configdiff.policy.json
+npx configdiff-js check --config config/production.yaml --policy configdiff.policy.json
 ```
 
 Rules that need a baseline are skipped in `check` mode.
@@ -44,7 +44,7 @@ Rules that need a baseline are skipped in `check` mode.
 ## Use the API
 
 ```js
-import { analyzeConfig, parseConfig } from "configdiff";
+import { analyzeConfig, parseConfig } from "configdiff-js";
 
 const report = analyzeConfig({
   baseline: parseConfig(stagingText, "env"),

@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: >
-          npx --yes configdiff@0.1 compare
+          npx --yes configdiff-js@0.1 compare
           --baseline config/staging.yaml
           --candidate config/production.yaml
           --policy configdiff.policy.json

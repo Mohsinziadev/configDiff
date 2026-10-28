@@ -62,7 +62,7 @@ export function Docs({ slug, anchor }: { slug: string; anchor: string | undefine
   const next = known ? DOC_PAGES[index + 1] : undefined;
 
   useEffect(() => {
-    document.title = page ? `${page.title} | ConfigDiff` : homeTitle;
+    document.title = page ? `${page.title} | configdiff-js` : homeTitle;
     return () => {
       document.title = homeTitle;
     };

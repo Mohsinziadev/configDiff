@@ -3,7 +3,7 @@
 `validateConfig` checks a single config against a schema and returns the same report shape as `analyzeConfig`, with findings only.
 
 ```js
-import { parseConfig, validateConfig } from "configdiff";
+import { parseConfig, validateConfig } from "configdiff-js";
 
 const report = validateConfig(parseConfig(text, "env"), {
   properties: { PORT: { type: "integer", min: 1, max: 65535, required: true } },

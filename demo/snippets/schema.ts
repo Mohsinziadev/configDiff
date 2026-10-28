@@ -1,4 +1,4 @@
-import { parseConfig, validateConfig } from "configdiff";
+import { parseConfig, validateConfig } from "configdiff-js";
 
 validateConfig(parseConfig(text, "env"), {
   properties: { PORT: { type: "integer", min: 1, max: 65535, required: true } },

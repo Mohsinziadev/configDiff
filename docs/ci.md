@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - run: npx --yes configdiff@0.1 compare --baseline config/staging.yaml --candidate config/production.yaml --policy configdiff.policy.json --fail-on warning
+      - run: npx --yes configdiff-js@0.1 compare --baseline config/staging.yaml --candidate config/production.yaml --policy configdiff.policy.json --fail-on warning
 ```
 
 ## Why it is safe for logs
@@ -24,7 +24,7 @@ Output is plain text with severities spelled out (no colour needed), and sensiti
 
 - Use `--fail-on warning` to block on warnings, or `--fail-on never` to report without failing.
 - Use `--output json` to feed the report to another tool.
-- Pin the version (`configdiff@0.1`) so rule changes never surprise a pipeline.
+- Pin the version (`configdiff-js@0.1`) so rule changes never surprise a pipeline.
 
 ## Troubleshooting
 
