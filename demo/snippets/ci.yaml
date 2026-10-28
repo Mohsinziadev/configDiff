@@ -1,0 +1,15 @@
+# .github/workflows/config.yml
+on: pull_request
+jobs:
+  configdiff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: >
+          npx --yes configdiff@0.1 compare
+          --baseline config/staging.yaml
+          --candidate config/production.yaml
+          --policy configdiff.policy.json
+          --fail-on warning

@@ -1,0 +1,21 @@
+{
+  "slug": "configdiff",
+  "url": "https://www.m2toolkit.com/npm-packages/configdiff",
+  "siteName": "M2Toolkit",
+  "ogImage": "https://www.m2toolkit.com/opengraph-image",
+  "accent": "#0f766e",
+  "title": "ConfigDiff",
+  "tagline": "Structural config comparison with risk-aware findings and built-in secret redaction.",
+  "runtimePlatform": "Node.js",
+  "highlights": [
+    "Compares env, JSON, YAML and TOML structurally, not line by line",
+    "Documented rules flag risky changes: auth off, staging values in production, public secrets",
+    "Secrets are redacted from every report, so CI logs stay safe",
+    "Works offline: no account, no telemetry, never executes your config"
+  ],
+  "build": {
+    "root": "demo",
+    "viteConfig": "demo/vite.config.ts",
+    "serverEntry": "demo/entry-server.tsx"
+  }
+}

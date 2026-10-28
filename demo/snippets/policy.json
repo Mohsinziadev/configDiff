@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "failOn": "error",
+  "coerce": { "PORT": "integer" },
+  "sensitive": { "keys": ["DATABASE_URL"] },
+  "rules": {
+    "required-keys": { "keys": ["DATABASE_URL", "REDIS_URL"] },
+    "watch-paths": {
+      "paths": [{ "path": "ENABLE_AUTH", "severity": "error" }]
+    }
+  }
+}

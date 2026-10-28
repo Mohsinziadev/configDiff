@@ -1,0 +1,7 @@
+http:
+  timeouts:
+    read: 5
+    write: 5
+regions: [eu-west-1, us-east-1]
+features:
+  beta: true

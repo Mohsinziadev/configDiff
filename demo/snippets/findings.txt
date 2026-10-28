@@ -1,0 +1,8 @@
+[ERROR] ENABLE_AUTH  (watch-paths)
+  Authentication must stay enabled. Value changed from "true" to "false".
+[ERROR] NEXT_PUBLIC_API_SECRET  (public-secret-exposure)
+  "NEXT_PUBLIC_" variables are exposed to client code, but this one looks secret.
+[WARNING] API_URL  (environment-mismatch)
+  Candidate value contains the marker "staging" (value not shown).
+[WARNING] DATABASE_URL  (credential-in-url)
+  Value is a URL with embedded credentials (value hidden).

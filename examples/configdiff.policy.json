@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "baselineName": "staging",
+  "candidateName": "production",
+  "failOn": "error",
+  "coerce": { "PORT": "integer" },
+  "sensitive": { "keys": ["DATABASE_URL"] },
+  "rules": {
+    "environment-mismatch": { "baseline": "staging" },
+    "required-keys": { "keys": ["DATABASE_URL", "REDIS_URL"] },
+    "watch-paths": {
+      "paths": [
+        {
+          "path": "ENABLE_AUTH",
+          "severity": "error",
+          "message": "Authentication must stay enabled."
+        }
+      ]
+    }
+  }
+}

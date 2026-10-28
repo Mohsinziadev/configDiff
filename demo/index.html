@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConfigDiff: compare env, JSON, YAML and TOML configs safely</title>
+    <meta
+      name="description"
+      content="Structural config comparison for env, JSON, YAML and TOML. Risk-aware findings, policy enforcement and built-in secret redaction, offline, for CI."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230f766e%27/%3E%3Cpath d=%27M10 9v14M22 9v14M10 16h12%27 fill=%27none%27 stroke=%27white%27 stroke-width=%273%27 stroke-linecap=%27round%27/%3E%3C/svg%3E"
+    />
+    <script>
+      // A visitor's own choice (the theme toggle) wins; otherwise follow the system.
+      try {
+        var choice = localStorage.getItem("configdiff-site:theme");
+        document.documentElement.dataset.theme =
+          choice === "light" || choice === "dark"
+            ? choice
+            : matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+      document.documentElement.dataset.view = "home";
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>

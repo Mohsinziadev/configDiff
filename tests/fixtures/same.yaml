@@ -1,0 +1,4 @@
+name: svc
+server:
+  port: 8080
+  hosts: [a, b]

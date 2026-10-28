@@ -1,0 +1,5 @@
+{
+  "http": { "timeouts": { "read": 30, "write": 5 } },
+  "regions": ["us-east-1", "eu-west-1"],
+  "features": { "beta": true }
+}

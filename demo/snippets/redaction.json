@@ -1,0 +1,7 @@
+{
+  "type": "modified",
+  "path": "JWT_SECRET",
+  "baseline": { "present": true, "type": "string", "redacted": true },
+  "candidate": { "present": true, "type": "string", "redacted": true },
+  "explanation": "Value changed (values hidden)."
+}
